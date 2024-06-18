@@ -1,0 +1,2 @@
+QuickTest
+quickCheck . withMaxSuccess 1000 $ property_function
