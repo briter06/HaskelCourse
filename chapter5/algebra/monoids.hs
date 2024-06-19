@@ -5,11 +5,11 @@ import Test.QuickCheck (Arbitrary, Property, quickCheck, withMaxSuccess, (===))
 
 newtype SumMonoid = SumMonoid Int deriving (Show, Eq, Arbitrary)
 
-instance Semigroup SumMonoid where
+instance Semigroup SumMonoid where -- Add values together
   (<>) :: SumMonoid -> SumMonoid -> SumMonoid
   (<>) (SumMonoid x) (SumMonoid y) = SumMonoid $ x + y
 
-instance Monoid SumMonoid where
+instance Monoid SumMonoid where -- Flat values together
   mempty :: SumMonoid
   mempty = SumMonoid 0
   mappend :: SumMonoid -> SumMonoid -> SumMonoid
